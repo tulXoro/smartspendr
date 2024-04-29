@@ -1,8 +1,8 @@
 <script>
     import "../app.css";
     import { onMount } from "svelte";
-    import NavBar from "../components/NavBar.svelte";
-    import Footer from "../components/Footer.svelte";
+    import NavBar from "../lib/NavBar.svelte";
+    import Footer from "../lib/Footer.svelte";
     let isNavOpen = false;
 
     onMount(() => {
