@@ -1,4 +1,4 @@
-<body>
+<main>
 <div id="budget-creation">
     <h2>Create Monthly Budget</h2>
     <form id="budget-form">
@@ -28,11 +28,11 @@
       </li>
     </ul>
   </div>
-</body>
+</main>
 
 <style>
     /* General body styles */
-body {
+main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #e8f5e9; /* Soft green background */
   color: #333;
