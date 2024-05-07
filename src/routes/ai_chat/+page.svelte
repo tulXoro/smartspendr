@@ -1,7 +1,5 @@
 <script lang="ts">
     import MessageBubble from '$lib/ai_chat/message.svelte';
-    import { text } from '@sveltejs/kit';
-
     let messages = [
         {
             sender: "AI Assistant",
