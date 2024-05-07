@@ -1,10 +1,11 @@
 <script lang="ts">
     import MessageBubble from '$lib/ai_chat/message.svelte';
+    import { text } from '@sveltejs/kit';
 
     let messages = [
         {
             sender: "AI Assistant",
-            text: "Hello, how can I help you today?",
+            text: "",
             time: new Date().toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3")
         }
     ];
@@ -30,12 +31,19 @@
 
     <div id="chat_interface" class="flex flex-col rounded-2xl overflow-y-auto relative p-4">
         <div class="flex flex-col overflow-y-auto mb-auto">
-            {#each messages as message}
+        {#each messages as message}
+            {#if message.text}
             <MessageBubble
                 sender={message.sender}
                 text={message.text}
                 time={message.time}
             />
+            {:else}
+            <MessageBubble
+                sender={message.sender}
+                time={message.time}
+            />
+            {/if}
         {/each}
         </div>
 
