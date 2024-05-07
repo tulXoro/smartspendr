@@ -27,7 +27,10 @@
     }
 </script>
 
-<main class="flex justify-center max-h-screen overflow-hidden">
+<main class="grid grid-cols-1 justify-items-center max-h-screen overflow-hidden">
+    <h1>
+        AI Assistant
+    </h1>
 
     <div id="chat_interface" class="flex flex-col rounded-2xl overflow-y-auto relative p-4">
         <div class="flex flex-col overflow-y-auto mb-auto">
