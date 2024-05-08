@@ -33,16 +33,17 @@
         padding: 30px;
     }
     .input{
-        width: 100%;
+        width: 90%;
         height: 8vh;
         padding: 12px;
-        margin: 8px;
+        margin: auto;
+		margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
     }
     .outer {
-        margin-top: 20vh;
+        margin-top: 10vh;
     }
 </style>
 

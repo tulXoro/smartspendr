@@ -52,6 +52,7 @@
             justify-content: center;
             align-items: center;
             padding: 30px;
+            margin-top: 5vh;
         }
         .input{
             width: 100%;
@@ -93,7 +94,7 @@
             margin-right: 30px;
         }
         label {
-            font-size: 1.2em;
+            font-size: 2em;
             font-weight: bold;
         }
     </style>

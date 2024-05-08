@@ -41,7 +41,7 @@
             color: white;
             align-items: center; 
             justify-content: center; 
-            width: 50vw;
+            width: 30vw;
         }
         .form{
             display: flex;
@@ -51,7 +51,7 @@
             padding: 30px;
         }
         .input{
-            width: 100%;
+            width: 90%;
             height: 8vh;
             padding: 12px;
             margin: 8px;
