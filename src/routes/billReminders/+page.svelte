@@ -164,7 +164,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-top: 3vh;
+        margin-top: 6vh;
         margin-left: 5vw;
     }
     .emptyContainer {
