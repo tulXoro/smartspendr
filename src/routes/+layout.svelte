@@ -6,7 +6,7 @@
 
 <style>
   .page-content {
-    padding-bottom: 350px; /* Adjust this value based on the height of your navbar */
+    padding-bottom: 400px; /* Adjust this value based on the height of your navbar */
   }
 </style>
 
