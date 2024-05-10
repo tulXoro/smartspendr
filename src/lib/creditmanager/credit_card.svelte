@@ -1,140 +1,236 @@
 <script>
+    import { Card, Tabs, TabItem, Chart, A, Button, Dropdown, DropdownItem, Label, Toggle, Checkbox, Modal, Range } from 'flowbite-svelte';
+
+    export let cardNumber = '**** **** **** 1234';
+    export let expirationDate = '12/24';
+    export let cvv = '***';
+    export let cardType = 'Visa';
+    export let bankName = 'Bank of America';
+    let bankPhone = '+1234567890';
+
+    const options = {
+    colors: ['#1A56DB', '#FDBA8C'],
+    series: [
+      {
+        name: 'Food',
+        color: '#1A56DB',
+        data: [
+          { x: 'Mon', y: 231 },
+          { x: 'Tue', y: 122 },
+          { x: 'Wed', y: 63 },
+          { x: 'Thu', y: 421 },
+          { x: 'Fri', y: 122 },
+          { x: 'Sat', y: 323 },
+          { x: 'Sun', y: 111 }
+        ]
+      },
+      {
+        name: 'Fuel',
+        color: '#FDBA8C',
+        data: [
+          { x: 'Mon', y: 232 },
+          { x: 'Tue', y: 113 },
+          { x: 'Wed', y: 341 },
+          { x: 'Thu', y: 224 },
+          { x: 'Fri', y: 522 },
+          { x: 'Sat', y: 411 },
+          { x: 'Sun', y: 243 }
+        ]
+      }
+    ],
+    chart: {
+      type: 'bar',
+      height: '70%',
+      fontFamily: 'Inter, sans-serif',
+      toolbar: {
+        show: false
+      }
+    },
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '70%',
+        borderRadiusApplication: 'end',
+        borderRadius: 8
+      }
+    },
+    tooltip: {
+      shared: true,
+      intersect: false,
+      style: {
+        fontFamily: 'Inter, sans-serif'
+      }
+    },
+    states: {
+      hover: {
+        filter: {
+          type: 'darken',
+          value: 1
+        }
+      }
+    },
+    stroke: {
+      show: true,
+      width: 0,
+      colors: ['transparent']
+    },
+    grid: {
+      show: false,
+      strokeDashArray: 4,
+      padding: {
+        left: 2,
+        right: 2,
+        top: -14
+      }
+    },
+    dataLabels: {
+      enabled: false
+    },
+    legend: {
+      show: false
+    },
+    xaxis: {
+      floating: false,
+      labels: {
+        show: true,
+        style: {
+          fontFamily: 'Inter, sans-serif',
+          cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+        }
+      },
+      axisBorder: {
+        show: false
+      },
+      axisTicks: {
+        show: false
+      }
+    },
+    yaxis: {
+      show: false
+    },
+    fill: {
+      opacity: 1
+    }
+  };
+  let freezeModal = false;
+  let autoFreezeModal = false;
+
+  $: freeze = false;
+  $: autoFreeze = false;
+
+  function openFreezeModal() {
+    if(freeze) {
+        return;
+    }
+
+    freezeModal = true;
+  }
+
+  function openAutoFreezeModal() {
+    if(autoFreeze) {
+        return;
+    }
+    autoFreezeModal = true;
+  }
+
+    function enableFreeze() {
+        freeze = true;
+        freezeModal = false;
+    }
+
+    function disableFreeze() {
+        freeze = false;
+        freezeModal = false;
+    }
+
+    function enableAutoFreeze() {
+        autoFreeze = true;
+        autoFreezeModal = false;
+    }
+
+    function disableAutoFreeze() {
+        autoFreeze = false;
+        autoFreezeModal = false;
+    }
 </script>
 
 
-
-
-<div class="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <div class="sm:hidden">
-        <label for="tabs" class="sr-only">Select tab</label>
-        <select id="tabs" class="bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-sm rounded-t-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-            <option>Statistics</option>
-            <option>Services</option>
-            <option>FAQ</option>
-        </select>
-    </div>
-    <ul class="hidden text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg sm:flex dark:divide-gray-600 dark:text-gray-400 rtl:divide-x-reverse" id="fullWidthTab" data-tabs-toggle="#fullWidthTabContent" role="tablist">
-        <li class="w-full">
-            <button id="stats-tab" data-tabs-target="#stats" type="button" role="tab" aria-controls="stats" aria-selected="true" class="inline-block w-full p-4 rounded-ss-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Statistics</button>
-        </li>
-        <li class="w-full">
-            <button id="about-tab" data-tabs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false" class="inline-block w-full p-4 bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">Services</button>
-        </li>
-        <li class="w-full">
-            <button id="faq-tab" data-tabs-target="#faq" type="button" role="tab" aria-controls="faq" aria-selected="false" class="inline-block w-full p-4 rounded-se-lg bg-gray-50 hover:bg-gray-100 focus:outline-none dark:bg-gray-700 dark:hover:bg-gray-600">FAQ</button>
-        </li>
-    </ul>
-    <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-            <dl class="grid max-w-screen-xl grid-cols-2 gap-8 p-4 mx-auto text-gray-900 sm:grid-cols-3 xl:grid-cols-6 dark:text-white sm:p-8">
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">73M+</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Developers</dd>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">100M+</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Public repositories</dd>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">1000s</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Open source projects</dd>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">1B+</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Contributors</dd>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">90+</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Top Forbes companies</dd>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                    <dt class="mb-2 text-3xl font-extrabold">4M+</dt>
-                    <dd class="text-gray-500 dark:text-gray-400">Organizations</dd>
-                </div>
-            </dl>
-        </div>
-        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="about" role="tabpanel" aria-labelledby="about-tab">
-            <h2 class="mb-5 text-2xl font-extrabold tracking-tight text-gray-900 dark:text-white">We invest in the world’s potential</h2>
-            <!-- List -->
-            <ul role="list" class="space-y-4 text-gray-500 dark:text-gray-400">
-                <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="leading-tight">Dynamic reports and dashboards</span>
-                </li>
-                <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="leading-tight">Templates for everyone</span>
-                </li>
-                <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="leading-tight">Development workflow</span>
-                </li>
-                <li class="flex space-x-2 rtl:space-x-reverse items-center">
-                    <svg class="flex-shrink-0 w-3.5 h-3.5 text-blue-600 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-                    </svg>
-                    <span class="leading-tight">Limitless business automation</span>
-                </li>
-            </ul>
-        </div>
-        <div class="hidden p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
-            <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
-                <h2 id="accordion-flush-heading-1">
-                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
-                    <span>What is Flowbite?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                    </button>
-                </h2>
-                <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
-                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out this guide to learn how to <a href="/docs/getting-started/introduction/" class="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.</p>
-                    </div>
-                </div>
-                <h2 id="accordion-flush-heading-2">
-                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-2" aria-expanded="false" aria-controls="accordion-flush-body-2">
-                    <span>Is there a Figma file available?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                    </button>
-                </h2>
-                <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
-                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.</p>
-                    <p class="text-gray-500 dark:text-gray-400">Check out the <a href="https://flowbite.com/figma/" class="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.</p>
-                    </div>
-                </div>
-                <h2 id="accordion-flush-heading-3">
-                    <button type="button" class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400" data-accordion-target="#accordion-flush-body-3" aria-expanded="false" aria-controls="accordion-flush-body-3">
-                    <span>What are the differences between Flowbite and Tailwind UI?</span>
-                    <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-                    </svg>
-                    </button>
-                </h2>
-                <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-3">
-                    <div class="py-5 border-b border-gray-200 dark:border-gray-700">
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.</p>
-                    <p class="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
-                    <ul class="ps-5 text-gray-500 list-disc dark:text-gray-400">
-                        <li><a href="https://flowbite.com/pro/" class="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-                        <li><a href="https://tailwindui.com/" rel="nofollow" class="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
-                    </ul>
-                    </div>
-                </div>
+<Card class="w-80 h-80">
+    <Tabs tabStyle="full" defaultClass="flex w-fit rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700">
+        <TabItem open>
+          <span slot="title">Info</span>
+            <div>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>Card Number:</b>
+                    {cardNumber}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>Expiration Date:</b>
+                    {expirationDate}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>CVV:</b>
+                    {cvv}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>Card Type:</b>
+                    {cardType}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>Bank Name:</b>
+                    {bankName}
+                </p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">
+                    <b>Bank Phone:</b>
+                    <A href="tel:+1234567890">{bankPhone}</A>
+                </p>
             </div>
-        </div>
-    </div>
-</div>
+            <div class="grid grid-cols-2 gap-32 p-1">
+              <Button class="w-fit h-fit px-1 py-2">View Transactions</Button>
+              <Button class="w-fit px-1 py-2 h-fit self-end">Reveal</Button>
+            </div>
 
+        </TabItem>
+        <TabItem class="p-0">
+          <span slot="title">Spending</span>
 
+            <Chart {options} />
+            <Button class="text-sm font-medium">Last 7 days</Button>
+            <Dropdown class="w-40" offset={-6}>
+              <DropdownItem>Yesterday</DropdownItem>
+              <DropdownItem>Today</DropdownItem>
+              <DropdownItem>Last 7 days</DropdownItem>
+              <DropdownItem>Last 30 days</DropdownItem>
+              <DropdownItem>Last 90 days</DropdownItem>
+            </Dropdown>
+
+        </TabItem>
+        <TabItem>
+            <span slot="title">Control</span>
+            <p class="text-sm text-gray-500 dark:text-gray-400 break-normal grid grid-cols-2 grid-rows-2 gap-y-16 gap-x-3">
+                <Toggle on:click={openFreezeModal} bind:checked={freeze} class="text-normal font-normal" color = "teal"><span>Freeze Card</span></Toggle>
+
+                <Modal title="Terms of Service" bind:open={freezeModal} autoclose>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Are you sure you want to freeze this card?</p>
+                    <svelte:fragment slot="footer">
+                      <Button on:click={enableFreeze} >Yes</Button>
+                      <Button on:click={disableFreeze} color="alternative">Decline</Button>
+                    </svelte:fragment>
+                </Modal>
+                <Toggle on:click= {openAutoFreezeModal} bind:checked={autoFreeze} class="text-normal font-normal" color = "teal"><span>Auto Freeze Card</span></Toggle>
+                <Modal title="Terms of Service" bind:open={autoFreezeModal} autoclose>
+                    <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">Are you sure you want to enable auto freeze this card?</p>
+                    <Label>Freeze Threshold:</Label>
+                    <Range size="lg" value={0} />
+                    <svelte:fragment slot="footer">
+                      <Button on:click={enableAutoFreeze}> Accept </Button>
+                      <Button on:click={disableAutoFreeze} color="alternative"> Decline</Button>
+                    </svelte:fragment>
+                </Modal>
+
+                <Button class="w-fit bg-green-600">Edit</Button>
+                <Button class="w-fit bg-red-700">Remove</Button>
+            </p>
+          </TabItem>
+      </Tabs>
+</Card>
