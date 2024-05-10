@@ -2,6 +2,7 @@
     // @ts-nocheck
         import Button from '../../lib/Button.svelte';
     
+        let uploaded = false;
         let budget = "";
         let expense = "";
         let cost = "";
@@ -97,9 +98,17 @@
             font-size: 2em;
             font-weight: bold;
         }
+        h1 {
+            display: flex;
+            justify-content: center;
+            font-size: 3vw;
+            margin-top: 20px;
+            font-weight: 500;
+        }
     </style>
     
     <div>
+        <h1>Manage Your Profile</h1>
         <form class="form" on:submit={add}>
             <label for="expense">Add Your Expenses</label>
             <div class="div">
@@ -131,5 +140,5 @@
             </div>
         </form>
         
-        <Button typeof="primary" url="/">Create Profile</Button>
+        <Button typeof="primary" url="/account">Save Profile</Button>
     </div>
