@@ -112,7 +112,7 @@
     border-radius: 15px;
     padding: 20px;
     margin: 10px auto;
-    max-width: 350px;
+    max-width: 370px;
     color: white;
 		position: relative;
     overflow: visible;
@@ -156,7 +156,7 @@ button.add-button {
     cursor: pointer;
     position: absolute;
     bottom: 149px; 
-    right: 29px; 
+    right: 18px; 
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 		@media (max-width: 600px) {
