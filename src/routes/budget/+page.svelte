@@ -31,18 +31,18 @@
 </main>
 
 <style>
-    /* General body styles */
-main {
+/* General body styles */
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #e8f5e9; /* Soft green background */
-  color: #333;
+  background-color: #f5f5f5; /* Soft green background */
+  color: #010101;
   margin: 0;
-  padding: 20px;
+  padding: 10px; /* Adjusted padding for smaller screens */
 }
 
 /* Headings with a deeper green color */
 h2 {
-  color: #1b5e20;
+  color: #000000;
   text-align: center;
 }
 
@@ -56,17 +56,17 @@ ul {
 /* List items with more prominent styling */
 li {
   background-color: #ffffff;
-  border-left: 5px solid #4caf50; /* Green accent on the side */
-  margin-bottom: 20px;
-  padding: 20px;
+  border-left: 5px solid #121212; /* Green accent on the side */
+  margin-bottom: 10px; /* Adjusted margin for smaller screens */
+  padding: 15px; /* Adjusted padding for smaller screens */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 /* Professional and more appealing button styles */
 button {
   font-size: 1rem;
-  padding: 10px 20px;
-  background-color: #4caf50;
+  padding: 8px 16px; /* Adjusted padding for smaller screens */
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 5px;
@@ -75,14 +75,14 @@ button {
 }
 
 button:hover {
-  background-color: #388e3c;
+  background-color: #0a0a0a;
 }
 
 /* Full-width container for each section */
-#bill-reminders, #subscription-management {
+#subscription-management {
   margin: auto;
-  max-width: 800px; /* Limiting max width for better readability */
-  padding: 20px;
+  max-width: 100%; /* Adjusted to full width for smaller screens */
+  padding: 10px; /* Adjusted padding for smaller screens */
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
