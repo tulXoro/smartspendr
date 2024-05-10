@@ -2,11 +2,16 @@
     import "../app.css";
     import { onMount } from "svelte";
     import NavBar from "../lib/NavBar.svelte";
-
 </script>
 
+<style>
+  .page-content {
+    padding-bottom: 350px; /* Adjust this value based on the height of your navbar */
+  }
+</style>
 
 <NavBar/>
 
-
-<slot />
+<div class="page-content">
+  <slot />
+</div>
