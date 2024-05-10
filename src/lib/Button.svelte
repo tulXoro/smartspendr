@@ -25,7 +25,7 @@
         height: auto;
     }
     .primary{
-        background: #d91b42;
+        background: #2563EB;
         color: white;
         align-items: center; 
         justify-content: center; 
@@ -36,7 +36,7 @@
        background: none;
        box-shadow: none;
        font-weight: 500;
-       color: #d91b42;
+       color: #2563EB;
     }
 
     a{

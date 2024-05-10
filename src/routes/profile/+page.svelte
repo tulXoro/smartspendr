@@ -2,7 +2,6 @@
     // @ts-nocheck
         import Button from '../../lib/Button.svelte';
     
-        let uploaded = false;
         let budget = "";
         let expense = "";
         let cost = "";
@@ -11,6 +10,7 @@
          * @type {string | any[]}
          */
         let expenseItems = [[]];
+        expenseItems.push(["Rent", "1700"]);
     
         /**
          * @param {{ target: { reset: () => void; }; }} event
@@ -41,7 +41,7 @@
             margin: auto;
             display: flex; 
             height: 5vh;
-            background: rgb(223, 139, 153);
+            background: #a2d2ff;
             color: white;
             align-items: center; 
             justify-content: center; 

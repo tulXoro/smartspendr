@@ -67,7 +67,7 @@
         font-size: 2vw;
         margin: 30px;
         display: flex; 
-        background: #d91b42;
+        background: #2563EB;
         color: white;
         align-items: center; 
         justify-content: center; 
@@ -75,13 +75,13 @@
         height: 7vh;
     }
     .cancel{
-        border-color: #d91b42;
+        border-color: #2563EB;
         cursor: pointer;
         border-radius: 6px;
         padding: 8px 12px;
         font-size: 26px;
         height: auto;
-        color: #d91b42;
+        color: #2563EB;
         background-color: white;
         width: 100px;
         display: flex;
@@ -97,7 +97,7 @@
         font-size: 26px;
         height: auto;
         color: white;
-        background-color: #d91b42;
+        background-color: #2563EB;
         width: 100px;
         display: flex;
         justify-content: center;
@@ -168,7 +168,7 @@
         margin-left: 5vw;
     }
     .emptyContainer {
-        background-color: rgba(217, 27, 66, 0.2);
+        background-color: rgba(162, 210, 255, 0.5);
         width: 90%;
         height: 50vh;
         border-radius: 15px;
@@ -179,7 +179,7 @@
         margin: auto;
     }
     h2 {
-        color: #d91b42;
+        color: #2563EB;
     }
     .type {
         color: black;

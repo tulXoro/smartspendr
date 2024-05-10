@@ -37,7 +37,7 @@
             display: flex; 
             width: auto;
             height: auto;
-            background: #d91b42;
+            background: #2563EB;
             color: white;
             align-items: center; 
             justify-content: center; 
@@ -77,7 +77,7 @@
             margin-bottom: 40px;
         }
         .uploadImg {
-            background-color: #d91b42;
+            background-color: #3B82F6;
             display: none;
         }
         label {
@@ -85,7 +85,7 @@
             border-radius: 6px;
             font-weight: bold;
             box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-            background-color: pink;
+            background-color: #a2d2ff;
             padding: 10px;
             width: auto;
         }
