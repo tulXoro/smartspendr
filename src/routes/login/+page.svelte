@@ -17,10 +17,11 @@
 		padding: 0;
 		font-weight: 300;
 		font-size: 2.5rem;
+		text-align: center;
 	}
 	h1{
 		margin-top: 0;
-		font-size: 5rem;
+		font-size: 4rem;
 	}
 	.welcomeSign{
 		display: flex;
