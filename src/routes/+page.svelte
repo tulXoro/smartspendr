@@ -12,13 +12,13 @@
 		margin-bottom: 0;
 		padding: 0;
 		font-weight: 300;
-		font-size: 3rem;
+		font-size: 4vw;
 	}
 	h1{
 		margin-top: 0;
         margin-bottom: 50px;
         padding: 0;
-		font-size: 5rem;
+		font-size: 7vw;
 	}
 	.welcomeSign{
 		display: flex;
@@ -30,7 +30,7 @@
     }
 </style>
 
-<div class="flex justify-center items-start h-screen pt-5">
+<div>
     <div class="outer">
         <div class="welcomeSign">
             <h3>WELCOME TO</h3> 

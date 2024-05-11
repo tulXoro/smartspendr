@@ -1,51 +1,51 @@
 <script>
     // @ts-nocheck
-        import Button from '../../lib/Button.svelte';
+        import rightArrow from '$lib/rightArrow.png';
+        import editProfile from '$lib/editProfile.png';
+        import bell from '$lib/bell.png';
+        import creditCard from '$lib/credit-card.png';
+        import subscription from '$lib/subscription.png';
+        import profilePic from '$lib/profilePic.png';
+        
+        let uploaded = false;
+        let username = "John Doe";
+        let email = "JohnDoe@gmail.com";
+        let newImg;
     
-        let budget = "";
-        let expense = "";
-        let cost = "";
-    
-        /**
-         * @type {string | any[]}
-         */
-        let expenseItems = [[]];
-        expenseItems.push(["Rent", "1700"]);
-    
-        /**
-         * @param {{ target: { reset: () => void; }; }} event
-         */
-        function add(event){
-            if(expense != "" && cost != ""){
-                let pair = [expense, cost]
-                expenseItems = [...expenseItems, pair];
+        const uploadFile = (/** @type {Event & { currentTarget: EventTarget & HTMLInputElement; }} */ e) => {
+            uploaded = true;
+            
+            if (e.target != null){
+                let image = e.target.files[0];
+                let reader = new FileReader();
+                reader.readAsDataURL(image);
+                reader.onload = e => {
+                    if (e.target != null){
+                        newImg = e.target.result
+                    }
+                };
             }
             
-            event.target.reset();
-        }
-    
-        let flag = false;
-        function saved(event){
-            flag = true;
-        }
+        };
     </script>
     
     <style>
         .button{
             cursor: pointer;
             border-radius: 6px;
-            padding: 8px;
+            padding: 8px 12px;
             font-weight: bold;
             box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-            font-size: 1rem;
-            margin: auto;
+            font-size: 26px;
+            margin-top: 20px;
             display: flex; 
-            height: 5vh;
-            background: #a2d2ff;
+            width: auto;
+            height: auto;
+            background: #2563EB;
             color: white;
             align-items: center; 
             justify-content: center; 
-            width: 15vw;
+            width: 30vw;
         }
         .form{
             display: flex;
@@ -53,92 +53,119 @@
             justify-content: center;
             align-items: center;
             padding: 30px;
-            margin-top: 5vh;
         }
         .input{
-            width: 100%;
-            height: 6vh;
+            width: 90%;
+            height: 8vh;
             padding: 12px;
             margin: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-        }
-        .div{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-        }
-        ul {
-            width: 100%;
-            height: auto;
-            margin: 10px;
-            padding: 5px;
-        }
-        li {
-            list-style: none;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            padding: 15px;
-            box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.2);
-            font-size: 1.3rem;
-            height: 8vh;
-            font-weight: 500;
+            background-color: rgb(224, 231, 240);
             margin-bottom: 20px;
-            border-radius: 6px;
         }
-        .type {
-            margin-left: 30px;
+        img {
+            max-width: 100%; 
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;   
         }
-        .cost{
-            margin-right: 30px;
-        }
-        label {
-            font-size: 2em;
-            font-weight: bold;
+        .imgdiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #bcbcbc;
         }
         h1 {
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        .outer {
+            margin: auto;
+            margin-top: 30px;
+            border: 1px solid #808080;
+            border-radius: 9px;
+            padding: 25px;
+            box-shadow: 10px 15px 5px  #d6d6d6;
+            width: 90%;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        li {
+            
+            height: 9vh;
+            padding: 13px;
             display: flex;
-            justify-content: center;
-            font-size: 3vw;
-            margin-top: 20px;
-            font-weight: 500;
+            justify-content: space-between;
+            border-bottom: 1px solid #bcbcbc;
+        }
+        .arrow {
+            height: 4vh;
+            width: 3vw;
+            margin-top: auto;
+        }
+        .icon {
+            height: 35px;
+            width: 35px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-right: 10px;
+        }
+        .title {
+            display: flex;
+            flex-direction: row;
+        }
+        .labels {
+            font-size: 2.8vh;
+            margin: auto;
         }
     </style>
     
-    <div>
-        <h1>Manage Your Profile</h1>
-        <form class="form" on:submit={add}>
-            <label for="expense">Add Your Expenses</label>
-            <div class="div">
-                <input class="input" type="text" placeholder="Expenses" bind:value={expense}>
-                <input class="input" type="text" placeholder="Expense Cost" bind:value={cost}>
-                <button class="button" type="submit">Add</button>
-            </div>  
-            {#if expenseItems.length > 1}
-            <ul>
-                {#each expenseItems.slice(1) as [first, second]}
-                    <li>
-                        <p class="type">{first}</p>
-                        <p class="cost">${second}</p>
-                    </li>
-                {/each}
-            </ul>
-            {/if}
-        </form>
-        
-        <form class="form" on:submit={saved}>
-            <label for="budget">Add Your Budget</label>
-            <div class="div">
-                <input class="input" type="text" id="budget" placeholder="Budget" bind:value={budget}>
-                {#if flag}
-                    <button class="button" type="submit">Saved!</button>
-                {:else}
-                    <button class="button" type="submit">Add</button>
-                {/if}
-            </div>
-        </form>
-        
-        <Button typeof="primary" url="/account">Save Profile</Button>
+    <div class="outer">
+        <div class="imgdiv">
+            <img id="uploadButton" src={profilePic} alt="blank profile pic" />
+            <h1>John Doe</h1>
+            <p>jDoe@gmail.com</p>
+        </div>
+        <ul>
+            <a href="/editProfile">
+            <li>
+                <div class="title">
+                    <img class="icon" src={editProfile} alt="profileIcon"/>
+                    <p class="labels">Edit Profile</p>
+                </div> 
+                <img class="arrow" src={rightArrow} alt="arrow"/>
+            </li>
+            </a>
+            <a href="/notifications">
+            <li>
+                <div class="title">
+                    <img class="icon" src={bell} alt="profileIcon"/>
+                    <p class="labels">Notifications</p>
+                </div> 
+                <img class="arrow" src={rightArrow} alt="arrow"/>
+            </li>
+            </a>
+            <a href="/creditcard">
+            <li>
+                <div class="title">
+                    <img class="icon" src={creditCard} alt="profileIcon"/>
+                    <p class="labels">Manage Credit Cards</p>
+                </div> 
+                <img class="arrow" src={rightArrow} alt="arrow"/>
+            </li>
+            </a>
+            <li>
+                <div class="title">
+                    <img class="icon" src={subscription} alt="profileIcon"/>
+                    <p class="labels">Manage Subscriptions</p>
+                </div> 
+                <img class="arrow" src={rightArrow} alt="arrow"/>
+            </li>
+        </ul>
     </div>

@@ -27,11 +27,6 @@
     }
 </script>
 
-<svelte:head>
-	<title>Bill Reminders</title>
-	<meta name="description" content="Bill Reminders Page" />
-</svelte:head>
-
 <style>
 	h1{
 		font-size: 3rem;
