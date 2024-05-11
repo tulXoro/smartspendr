@@ -1,5 +1,6 @@
 <script>
 	import Button from '../../lib/Button.svelte';
+ import { session } from "../../store/sessionStore";
 
 	let username = "";
 	let password = "";
@@ -53,10 +54,12 @@
 		<h3>WELCOME BACK TO</h3> 
 		<h1>SmartSpendr</h1>
 	</div>   
-	<form class="form">
+	<form class="form" on:submit={()=>{session.set({isLoggedIn: true})}} >
         <input class="input" type="text" placeholder="Enter Username" bind:value={username}>
 		<input class="input" type="text" placeholder="Enter Password" bind:value={password}>
+
+<Button type="submit" typeOf="primary" url='/transaction'>Log In</Button>
 	</form>
-	<Button typeOf="primary" url=''>Log In</Button>
+	
 	<Button typeOf="signup" url='/register'>Sign Up</Button>
 </div>

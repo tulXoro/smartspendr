@@ -40,68 +40,68 @@
 
 <style>
   img {
-        height: auto;
-        width: 10vw;
-    }
-    a {
-        width: 10vw;
-        display: flex;
-        margin-top: 20px;
-    }
-/* General body styles */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5; /* Soft green background */
-  color: #010101;
-  margin: 0;
-  padding: 10px; /* Adjusted padding for smaller screens */
-}
+    height: auto;
+    width: 10vw;
+  }
+  a {
+    width: 10vw;
+    display: flex;
+    margin-top: 20px;
+  }
+  /* General body styles */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5; /* Neutral background */
+    color: #2563EB; /* Updated text color to blue */
+    margin: 0;
+    padding: 10px; /* Adjusted padding for smaller screens */
+  }
 
-/* Headings with a deeper green color */
-h2 {
-  color: #000000;
-  text-align: center;
-}
+  /* Headings with a deeper color */
+  h2 {
+    color: #E53E3E; /* Updated color to red */
+    text-align: center;
+  }
 
-/* Styling for lists to make them fill out more space */
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+  /* Styling for lists to make them fill out more space */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-/* List items with more prominent styling */
-li {
-  background-color: #ffffff;
-  border-left: 5px solid #121212; /* Green accent on the side */
-  margin-bottom: 10px; /* Adjusted margin for smaller screens */
-  padding: 15px; /* Adjusted padding for smaller screens */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+  /* List items with more prominent styling */
+  li {
+    background-color: #ffffff;
+    border-left: 5px solid #2563EB; /* Updated accent to blue */
+    margin-bottom: 10px; /* Adjusted margin for smaller screens */
+    padding: 15px; /* Adjusted padding for smaller screens */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
 
-/* Professional and more appealing button styles */
-button {
-  font-size: 1rem;
-  padding: 8px 16px; /* Adjusted padding for smaller screens */
-  background-color: #000000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
+  /* Professional and more appealing button styles */
+  button {
+    font-size: 1rem;
+    padding: 8px 16px; /* Adjusted padding for smaller screens */
+    background-color: #2563EB; /* Updated button color to blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-button:hover {
-  background-color: #0a0a0a;
-}
+  button:hover {
+    background-color: #1D4ED8; /* A darker shade of blue for hover */
+  }
 
-/* Full-width container for each section */
-#subscription-management {
-  margin: auto;
-  max-width: 100%; /* Adjusted to full width for smaller screens */
-  padding: 10px; /* Adjusted padding for smaller screens */
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
+  /* Full-width container for each section */
+  #subscription-management {
+    margin: auto;
+    max-width: 100%; /* Adjusted to full width for smaller screens */
+    padding: 10px; /* Adjusted padding for smaller screens */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
 </style>
