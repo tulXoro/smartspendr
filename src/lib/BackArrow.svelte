@@ -6,10 +6,10 @@
 <style>
     img {
         height: auto;
-        width: 4vw;
+        width: 10vw;
     }
     a {
-        width: 4vw;
+        width: 10vw;
         display: flex;
         margin-top: 20px;
     }

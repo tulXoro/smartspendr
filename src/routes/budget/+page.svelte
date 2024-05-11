@@ -1,4 +1,12 @@
+<script>
+  import backArrow from '$lib/backArrow.png';
+  export let typeOf = 'icon'
+
+</script>
 <main>
+  <a href="/account" class={typeOf}>
+    <img src={backArrow} alt="back arrow" />
+</a>
 <div id="budget-creation">
     <h2>Create Monthly Budget</h2>
     <form id="budget-form">
@@ -31,6 +39,15 @@
 </main>
 
 <style>
+  img {
+        height: auto;
+        width: 10vw;
+    }
+    a {
+        width: 10vw;
+        display: flex;
+        margin-top: 20px;
+    }
 /* General body styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

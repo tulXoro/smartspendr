@@ -11,21 +11,28 @@
    {#if sender === "AI Assistant"}
       <img class="w-8 h-8 rounded-full" src={RobotIcon} alt="RobotIcon">
    {/if}
-    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-box rounded-e-xl rounded-es-xl">
        <div class="flex items-center space-x-2 rtl:space-x-reverse">
-          <span class="text-sm font-semibold text-gray-900 dark:text-white">{sender}</span>
-          <span class="text-sm font-normal text-gray-500 dark:text-gray-400">{time}</span>
+          <span class="text-sm font-semibold">{sender}</span>
+          <span class="text-sm font-normal">{time}</span>
        </div>
 
-       <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+       <p class="text-sm font-normal py-2.5">
          {text}
        </p>
 
        {#if sender !== "AI Assistant"}
-       <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Delivered</span>
+       <span class="text-sm font-normal">Delivered</span>
        {/if}
     </div>
    {#if sender !== "AI Assistant"}
       <img class="w-8 h-8 rounded-full" src={UserIcon} alt="UserIcon">
    {/if}
  </div>
+
+ <style>
+  .chat-box {
+    background-color: #E53E3E;
+    color: white; /* complimentary blue color */
+  }
+  </style>

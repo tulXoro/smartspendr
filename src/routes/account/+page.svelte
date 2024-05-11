@@ -38,16 +38,13 @@ h1{
 
 <div class="page">
   <div class="container">
-    <h1 class="text-3xl font-bold underline">
-      Account page
-    </h1>
     <div style="height: 400px; width: 100%;">
       <Chart />
     </div>
     <ExpenseList {expenses} />
     <div>
-      <a href="account/addAccount" type="button" class="mt-4 inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700">
-        <span class="text-white">Add Account</span>
+      <a href="budget" type="button" class="mt-4 inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700">
+        <span class="text-white">Add Budget</span>
       </a>
     </div>
   </div>
