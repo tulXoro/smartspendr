@@ -19,7 +19,7 @@
 
 
       <a href="/ai_chat" data-tooltip-target="tooltip-wallet" type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-        <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><path d="m32 224h32v192h-32a31.96166 31.96166 0 0 1 -32-32v-128a31.96166 31.96166 0 0 1 32-32zm512-48v272a64.06328 64.06328 0 0 1 -64 64h-320a64.06328 64.06328 0 0 1 -64-64v-272a79.974 79.974 0 0 1 80-80h112v-64a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.96166 31.96166 0 0 1 -32 32h-32v-192h32a31.96166 31.96166 0 0 1 32 32z"/></svg>
+        <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg" fill="#6b7280"><path d="m32 224h32v192h-32a31.96166 31.96166 0 0 1 -32-32v-128a31.96166 31.96166 0 0 1 32-32zm512-48v272a64.06328 64.06328 0 0 1 -64 64h-320a64.06328 64.06328 0 0 1 -64-64v-272a79.974 79.974 0 0 1 80-80h112v-64a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.96166 31.96166 0 0 1 -32 32h-32v-192h32a31.96166 31.96166 0 0 1 32 32z"/></svg>
           <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">AI</span>
       </a>
 
@@ -31,9 +31,7 @@
       </a>
 
     <a href="/budget" data-tooltip-target="tooltip-profile" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
-        <svg class="w-5 h-5 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
-        </svg>
+        <svg class="w-5 h-5 mb-1" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#6b7280"><path d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z"/></svg>
         <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">Budget</span>
     </a>
   </div>
