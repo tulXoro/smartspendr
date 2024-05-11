@@ -18,7 +18,7 @@
         padding: 8px 12px;
         font-weight: bold;
         box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-        font-size: 26px;
+        font-size: 2vw;
         margin: auto;
         display: flex; 
         width: auto;
@@ -37,6 +37,7 @@
        box-shadow: none;
        font-weight: 500;
        color: #2563EB;
+       font-size: 1.3vw;
     }
 
     a{
