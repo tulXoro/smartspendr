@@ -58,7 +58,7 @@
         <input class="input" type="text" placeholder="Enter Username" bind:value={username}>
 		<input class="input" type="text" placeholder="Enter Password" bind:value={password}>
 
-<Button type="submit" typeOf="primary" url='/transaction'>Log In</Button>
+<Button type="submit" typeOf="primary" url=''>Log In</Button>
 	</form>
 	
 	<Button typeOf="signup" url='/register'>Sign Up</Button>
