@@ -46,8 +46,8 @@ import CreditCard from '$lib/creditmanager/credit_card.svelte';
 
 
 <main class="flex flex-col h-screen items-center">
-    <h1 class="text-3xl font-bold underline pb-10">
-        Credit Card Management Page
+    <h1 class="">
+        Credit Card Management
     </h1>
 
     <div id="creditcardcontainer" class="grid lg:grid-cols-2 sm:grid-cols-1" >
