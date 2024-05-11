@@ -1,6 +1,5 @@
 <script>
 	import Button from "../lib/Button.svelte";
- import { session } from "../../store/sessionStore";
 
 </script>
 
@@ -45,6 +44,6 @@
             <h1>SmartSpendr</h1>
         </div>
         <Button typeOf="primary" url='login'>Log In</Button>
-        <Button on:click={()=>{session.set({isLoggedIn: true})}} typeOf="signup" url='/register'>Sign Up</Button>
+        <Button typeOf="signup" url='/register'>Sign Up</Button>
     </div>
 </div>
