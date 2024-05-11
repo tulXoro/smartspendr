@@ -44,7 +44,21 @@
     }
 </script>
 
+<style>
+    .outer {
+            margin: auto;
+            margin-top: 30px;
+            border: 1px solid #808080;
+            border-radius: 9px;
+            padding: 25px;
+            padding-top: 0;
+            box-shadow: 10px 15px 5px  #d6d6d6;
+            width: 90%;
+            height: 180vh;
+    }
+</style>
 
+<div class="outer">
 <BackArrow typeOf="moved" />
 <main class="flex flex-col h-screen items-center">
     <h1 class="">
@@ -105,3 +119,4 @@
     </div>
 
 </main>
+</div>
