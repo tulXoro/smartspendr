@@ -155,44 +155,44 @@
 </script>
 
 
-<Card class="w-80 h-80">
-    <Tabs tabStyle="full" defaultClass="flex w-fit rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700">
+<Card class="w-50 mx-5 my-3 lg:w-80">
+    <Tabs tabStyle="full" defaultClass="flex w-fit rounded-lg divide-x rtl:divide-x-reverse divide-gray-200 shadow dark:divide-gray-700 text-xs">
         <TabItem open>
-          <span slot="title">Info</span>
+          <span slot="title" class="text-xs">Info</span>
             <div>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>Card Number:</b>
                     {cardNumber}
                 </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>Expiration Date:</b>
                     {expirationDate}
                 </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>CVV:</b>
                     {cvv}
                 </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>Card Type:</b>
                     {cardType}
                 </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>Bank Name:</b>
                     {bankName}
                 </p>
-                <p class="text-sm text-gray-500 dark:text-gray-400">
+                <p class="text-xs text-gray-500 dark:text-gray-400">
                     <b>Bank Phone:</b>
                     <A href="tel:+1234567890">{bankPhone}</A>
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-32 p-1">
-              <Button class="w-fit h-fit px-1 py-2">View Transactions</Button>
-              <Button class="w-fit px-1 py-2 h-fit self-end">Reveal</Button>
+              <Button class="w-fit h-fit px-1 py-2 text-xs">View Transactions</Button>
+              <Button class="w-fit px-1 py-2 h-fit self-end text-xs">Reveal</Button>
             </div>
 
         </TabItem>
         <TabItem class="p-0">
-          <span slot="title">Spending</span>
+          <span slot="title" class="text-xs">Spending</span>
 
             <Chart {options} />
             <Button class="text-sm font-medium">Last 7 days</Button>
@@ -206,7 +206,7 @@
 
         </TabItem>
         <TabItem>
-            <span slot="title">Control</span>
+            <span slot="title" class="text-xs">Control</span>
             <p class="text-sm text-gray-500 dark:text-gray-400 break-normal grid grid-cols-2 grid-rows-2 gap-y-16 gap-x-3">
                 <Toggle on:click={openFreezeModal} bind:checked={freeze} class="text-normal font-normal" color = "teal"><span>Freeze Card</span></Toggle>
 

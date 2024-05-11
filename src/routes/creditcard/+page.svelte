@@ -50,7 +50,7 @@ import CreditCard from '$lib/creditmanager/credit_card.svelte';
         Credit Card Management Page
     </h1>
 
-    <div id="creditcardcontainer" class="grid grid-cols-2 gap-8" >
+    <div id="creditcardcontainer" class="grid lg:grid-cols-2 sm:grid-cols-1" >
         {#each cards as card}
             <CreditCard
                 cardNumber={card.cardNumber}
@@ -61,7 +61,7 @@ import CreditCard from '$lib/creditmanager/credit_card.svelte';
         {/each}
 
         <div class="flex justify-center">
-            <button on:click={() => showModal = true} class="w-80 y-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            <button on:click={() => showModal = true} class="w-50 mx-5 my-3 lg:w-80 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-32">
                 Add New Card
             </button>
         </div>
