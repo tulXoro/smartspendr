@@ -9,29 +9,35 @@
 </svelte:head>
 
 <style>
-	h3{
-		margin-bottom: 0;
-		padding: 0;
-		font-weight: 300;
-		font-size: 2.5rem;
-	}
-	h1{
-		margin-top: 0;
+    h3{
+        margin-bottom: 0;
+        padding: 0;
+        font-weight: 300;
+        font-size: 2.5rem;
+    }
+    h1{
+        margin-top: 0;
         margin-bottom: 50px;
         padding: 0;
-		font-size: 5rem;
-	}
-	.welcomeSign{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+        font-size: 4rem;
+    }
+    .welcomeSign{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .outer {
-        margin-top: 20vh;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+    .page-container {
+        height: 100vh; 
     }
 </style>
 
-<div>
+<div class="page-container">
     <div class="outer">
         <div class="welcomeSign">
             <h3>WELCOME TO</h3>
