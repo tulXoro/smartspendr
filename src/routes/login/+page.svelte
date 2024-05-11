@@ -16,7 +16,7 @@
 		margin-bottom: 0;
 		padding: 0;
 		font-weight: 300;
-		font-size: 3rem;
+		font-size: 2.5rem;
 	}
 	h1{
 		margin-top: 0;
@@ -43,19 +43,19 @@
         box-sizing: border-box;
     }
     .outer {
-        margin-top: 10vh;
+        margin: 10vh;
     }
 </style>
 
 <div class="outer">
 	<div class="welcomeSign">
-		<h3>WELCOME TO</h3> 
+		<h3>WELCOME BACK TO</h3> 
 		<h1>SmartSpendr</h1>
 	</div>   
 	<form class="form">
         <input class="input" type="text" placeholder="Enter Username" bind:value={username}>
 		<input class="input" type="text" placeholder="Enter Password" bind:value={password}>
 	</form>
-	<Button typeOf="primary">Log In</Button>
+	<Button typeOf="primary" url='/transaction'>Log In</Button>
 	<Button typeOf="signup" url='/register'>Sign Up</Button>
 </div>

@@ -1,7 +1,8 @@
 <script>
     import Button from '$lib/Button.svelte';
-import CreditCard from '$lib/creditmanager/credit_card.svelte';
+    import CreditCard from '$lib/creditmanager/credit_card.svelte';
     import {Modal, FloatingLabelInput, Helper} from 'flowbite-svelte';
+    import BackArrow from '../../lib/BackArrow.svelte';
 
     $: cards = [
         {
@@ -44,12 +45,11 @@ import CreditCard from '$lib/creditmanager/credit_card.svelte';
 </script>
 
 
-
+<BackArrow typeOf="moved" />
 <main class="flex flex-col h-screen items-center">
     <h1 class="">
         Credit Card Management
     </h1>
-
     <div id="creditcardcontainer" class="grid lg:grid-cols-2 sm:grid-cols-1" >
         {#each cards as card}
             <CreditCard

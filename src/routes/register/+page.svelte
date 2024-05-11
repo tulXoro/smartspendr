@@ -87,17 +87,29 @@
             border-radius: 6px;
             font-weight: bold;
             box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-            background-color: #a2d2ff;
+            background-color: #E53E3E;
             padding: 10px;
             width: auto;
+            color: white;
         }
         h1 {
             font-size: xx-large;
             font-weight: 900;
         }
+        .outer {
+            margin: auto;
+            margin-top: 30px;
+            border: 1px solid #808080;
+            border-radius: 9px;
+            padding: 25px;
+            padding-top: 0;
+            box-shadow: 10px 15px 5px  #d6d6d6;
+            width: 90%;
+    }
     </style>
 
-    <form class="form" action="/profile" on:submit={() => { session.set({isLoggedIn: true})}}>
+<div class="outer">
+    <form class="form" action="/transaction" on:submit={() => { session.set({isLoggedIn: true})}}>
         <div class="imgdiv">
             <h1>@UserName</h1>
             <div class="img">
@@ -113,5 +125,6 @@
         </div>
         <input class="input" type="text" placeholder="Username" bind:value={username}>
         <input class="input" type="text" placeholder="Password" bind:value={password}>
-        <button class="button" type="submit">Continue</button>
+        <button class="button" type="submit">Save Profile</button>
     </form>
+</div>

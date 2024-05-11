@@ -8,8 +8,6 @@
         import profilePic from '$lib/profilePic.png';
         
         let uploaded = false;
-        let username = "John Doe";
-        let email = "JohnDoe@gmail.com";
         let newImg;
     
         const uploadFile = (/** @type {Event & { currentTarget: EventTarget & HTMLInputElement; }} */ e) => {
@@ -30,41 +28,6 @@
     </script>
     
     <style>
-        .button{
-            cursor: pointer;
-            border-radius: 6px;
-            padding: 8px 12px;
-            font-weight: bold;
-            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-            font-size: 26px;
-            margin-top: 20px;
-            display: flex; 
-            width: auto;
-            height: auto;
-            background: #2563EB;
-            color: white;
-            align-items: center; 
-            justify-content: center; 
-            width: 30vw;
-        }
-        .form{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-        }
-        .input{
-            width: 90%;
-            height: 8vh;
-            padding: 12px;
-            margin: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            background-color: rgb(224, 231, 240);
-            margin-bottom: 20px;
-        }
         img {
             max-width: 100%; 
             width: 200px;
@@ -142,11 +105,11 @@
                 <img class="arrow" src={rightArrow} alt="arrow"/>
             </li>
             </a>
-            <a href="/notifications">
+            <a href="/myBillReminders">
             <li>
                 <div class="title">
                     <img class="icon" src={bell} alt="profileIcon"/>
-                    <p class="labels">Notifications</p>
+                    <p class="labels">Bill Reminders</p>
                 </div> 
                 <img class="arrow" src={rightArrow} alt="arrow"/>
             </li>

@@ -13,13 +13,13 @@
 		margin-bottom: 0;
 		padding: 0;
 		font-weight: 300;
-		font-size: 4vw;
+		font-size: 2.5rem;
 	}
 	h1{
 		margin-top: 0;
         margin-bottom: 50px;
         padding: 0;
-		font-size: 7vw;
+		font-size: 5rem;
 	}
 	.welcomeSign{
 		display: flex;

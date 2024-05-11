@@ -1,4 +1,7 @@
 <script>
+    import bell from '$lib/bell.png';
+    import BackArrow from '../../lib/BackArrow.svelte';
+
     let showModal = false;
     let billName = "";
     let cost = "";
@@ -46,6 +49,7 @@
         background: rgba(169, 169, 169, 0.9);
         left: 0;
         right: 0;
+        top: 0;
     }
     .modal {
         width: 450px;
@@ -62,7 +66,7 @@
         font-size: 2vw;
         margin: 30px;
         display: flex; 
-        background: #2563EB;
+        background: #E53E3E;
         color: white;
         align-items: center; 
         justify-content: center; 
@@ -76,13 +80,14 @@
         padding: 8px 12px;
         font-size: 26px;
         height: auto;
-        color: #2563EB;
+        color: #E53E3E;
         background-color: white;
         width: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 5px;
+        border: 1px solid;
     }
     .save{
         border-color: #d91b42;
@@ -92,7 +97,7 @@
         font-size: 26px;
         height: auto;
         color: white;
-        background-color: #2563EB;
+        background-color: #E53E3E;
         width: 100px;
         display: flex;
         justify-content: center;
@@ -117,9 +122,9 @@
     input {
         margin: auto;
         margin-top: 5px;
-        height: 5vh;
+        height: 7vh;
         width: 90%;
-        background: rgba(231, 231, 231);
+        background-color: rgb(222, 236, 255);;
         border: 0;
         border-radius: 3px;
         padding: 5px;
@@ -132,7 +137,7 @@
         display: flex;
         justify-content: center;
         position: relative;
-        bottom: 30px;
+        bottom: 40px;
     }
     ul {
         width: 80%;
@@ -159,12 +164,10 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-top: 6vh;
-        margin-left: 5vw;
     }
     .emptyContainer {
         background-color: rgba(162, 210, 255, 0.5);
-        width: 90%;
+        width: 100%;
         height: 50vh;
         border-radius: 15px;
         display: flex;
@@ -172,15 +175,16 @@
         align-items: center;
         cursor: pointer;
         margin: auto;
+        flex-direction: column;
     }
     h2 {
-        color: #2563EB;
+        color: #E53E3E;
     }
     .type {
         color: black;
         margin-left: 20px;
         margin-right: 10px;
-        margin-top: 10px;
+        margin-top: 20px;
         font-size: 1.5rem;
     }
     .recurrence {
@@ -190,7 +194,23 @@
     }
     .break {
         flex-basis: 100%;
-        height: 0;
+        height: 0; 
+    }
+    .icon {
+            height: 45px;
+            width: 45px;
+            margin-top: 30px;
+            margin-right: 30px;   
+    }
+    .outer {
+            margin: auto;
+            margin-top: 30px;
+            border: 1px solid #808080;
+            border-radius: 9px;
+            padding: 25px;
+            padding-top: 0;
+            box-shadow: 10px 15px 5px  #d6d6d6;
+            width: 90%;
     }
 </style>
 
@@ -214,7 +234,8 @@
 </div>
 {/if}
 
-<div>
+<div class="outer">
+    <BackArrow />
 	<div class="container">
         <div class="heading">
             <h1>My Bill Reminders</h1>
@@ -225,6 +246,7 @@
             {#each billItems.slice(1) as [first, second, third]}
                 <li>
                     <h2 class="type">{first} - ${second}</h2>
+                    <img src={bell} class="icon" alt="bell"/>
                     <div class="break"></div>
                     <p class="recurrence">{third}</p>
                 </li>
@@ -234,9 +256,9 @@
         <!-- svelte-ignore a11y-click-events-have-key-events -->
         <!-- svelte-ignore a11y-no-static-element-interactions -->
         <div class="emptyContainer" on:click={toggleModal}>
-            <h2>
-                +Add Bill Reminder
-            </h2>
+            <h2>empty :( </h2>
+            <br/>
+            <h2>+Add Bill Reminder</h2>
         </div>
         {/if}
     </div>   
