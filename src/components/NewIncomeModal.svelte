@@ -31,7 +31,7 @@
         <input id="category" type="text" bind:value={category} placeholder="Enter category">
     </div>
     <button class="submit-btn" on:click={submit}>Submit</button>
-    <button class="close-btn" on:click={close2} style="color: #2c3e50; font-weight: bold;">Close</button>
+    <button class="close-btn" on:click={close2} style="color: white; font-weight: bold;">Close</button>
 </div>
 
 <style>
@@ -72,11 +72,11 @@
         width: 100%;
     }
     .submit-btn {
-        background-color: #2c3e50;
+        background-color: #2563EB;
         color: white;
     }
     .close-btn {
-        background-color: #BFC0C0;
+        background-color: #E53E3E;
         color: white;
         margin-top: 5px;
     }

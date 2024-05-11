@@ -102,13 +102,13 @@
     margin-bottom: 10px; 
     font-weight: bold; 
     padding: 10px 0; 
-    background-color: #34495e; 
+    background-color: #2563EB; 
     border-radius: 5px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.25); 
 }
 	
   .card {
-    background: #2c3e50; 
+    background: white; 
     border-radius: 15px;
     padding: 20px;
     margin: 10px auto;
@@ -120,7 +120,7 @@
   .tab, .view-toggle {
     padding: 8px 16px;
     margin-right: 4px;
-    background-color: #34495e;
+    background-color: #2563EB;
     border: none;
     cursor: pointer;
     color: white;
@@ -128,7 +128,7 @@
     font-size: 14px;
   }
   .active {
-    background-color: #16a085;
+    background-color: #19439e;
   }
   .tab-container {
     display: flex;
@@ -139,16 +139,16 @@
     text-align: center;
     margin-bottom: 10px; 
     font-size: 14px;
-    color: #ecf0f1;
+    color: #19439e;
   }
     .greeting {
-        color: white;
+        color: #19439e;
         font-size: 24px;
         margin-bottom: 5px;
     }
 	
 button.add-button {
-    background-color: #f39c12;
+    background-color:  #E53E3E;
     border: none;
     padding: 12px 16px;
     border-radius: 50%;
