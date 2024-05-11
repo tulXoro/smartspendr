@@ -2,6 +2,7 @@
     import "../app.css";
     import { onMount } from "svelte";
     import NavBar from "../lib/NavBar.svelte";
+    import { session } from "../store/sessionStore";
 </script>
 
 <style>
@@ -10,7 +11,9 @@
   }
 </style>
 
-<NavBar/>
+{#if $session.isLoggedIn}
+  <NavBar/>
+{/if}
 
 <div class="page-content">
   <slot />

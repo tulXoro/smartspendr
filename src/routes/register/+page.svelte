@@ -1,16 +1,18 @@
 <script>
     // @ts-nocheck
-    
+        import { session } from "../../store/sessionStore";
         import blankPic from '$lib/blank_profile_pic.png';
-        
+
+
+
         let uploaded = false;
         let username = "";
         let password = "";
         let newImg;
-    
+
         const uploadFile = (/** @type {Event & { currentTarget: EventTarget & HTMLInputElement; }} */ e) => {
             uploaded = true;
-            
+
             if (e.target != null){
                 let image = e.target.files[0];
                 let reader = new FileReader();
@@ -21,10 +23,10 @@
                     }
                 };
             }
-            
+
         };
     </script>
-    
+
     <style>
         .button{
             cursor: pointer;
@@ -34,13 +36,13 @@
             box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
             font-size: 26px;
             margin-top: 20px;
-            display: flex; 
+            display: flex;
             width: auto;
             height: auto;
             background: #2563EB;
             color: white;
-            align-items: center; 
-            justify-content: center; 
+            align-items: center;
+            justify-content: center;
             width: 30vw;
         }
         .form{
@@ -67,7 +69,7 @@
             overflow: hidden;
         }
         img {
-            max-width: 100%;    
+            max-width: 100%;
         }
         .imgdiv {
             display: flex;
@@ -94,8 +96,8 @@
             font-weight: 900;
         }
     </style>
-    
-    <form class="form" action="/profile">
+
+    <form class="form" action="/profile" on:submit={() => { session.set({isLoggedIn: true})}}>
         <div class="imgdiv">
             <h1>@UserName</h1>
             <div class="img">

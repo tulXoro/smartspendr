@@ -1,5 +1,6 @@
 <script>
 	import Button from "../lib/Button.svelte";
+
 </script>
 
 <svelte:head>
@@ -33,9 +34,9 @@
 <div>
     <div class="outer">
         <div class="welcomeSign">
-            <h3>WELCOME TO</h3> 
+            <h3>WELCOME TO</h3>
             <h1>SmartSpendr</h1>
-        </div>   
+        </div>
         <Button typeOf="primary" url='login'>Log In</Button>
         <Button typeOf="signup" url='/register'>Sign Up</Button>
     </div>
