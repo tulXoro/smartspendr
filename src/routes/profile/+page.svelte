@@ -123,6 +123,7 @@
                 <img class="arrow" src={rightArrow} alt="arrow"/>
             </li>
             </a>
+            <a href="/submanagement">
             <li>
                 <div class="title">
                     <img class="icon" src={subscription} alt="profileIcon"/>
@@ -130,5 +131,6 @@
                 </div> 
                 <img class="arrow" src={rightArrow} alt="arrow"/>
             </li>
+            </a>
         </ul>
     </div>
