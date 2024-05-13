@@ -1,4 +1,10 @@
+<script>
+    import BackArrow from '../../lib/BackArrow.svelte';
+</script>
+
 <main>
+    <div class="outer">
+    <BackArrow />
     <div id="subscription-management">
         <h2>Subscription Management</h2>
         <ul id="subscription-list">
@@ -15,6 +21,7 @@
             </li>
         </ul>
     </div>
+</div>
 </main>
 
 <style>
@@ -74,4 +81,13 @@
         border-radius: 8px;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
+    .outer {
+            margin: auto;
+            margin-top: 30px;
+            border: 1px solid #808080;
+            border-radius: 9px;
+            padding: 25px;
+            box-shadow: 10px 15px 5px  #d6d6d6;
+            width: 90%;
+        }
 </style>

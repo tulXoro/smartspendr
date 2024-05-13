@@ -38,6 +38,7 @@
        font-weight: 500;
        color: #2563EB;
        font-size: 1.3rem;
+       margin-top: 0;
     }
 
     a{
