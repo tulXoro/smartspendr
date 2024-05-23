@@ -33,6 +33,8 @@
 
 h1{
   color: #333;
+  font-weight: bold;
+  font-size: 2rem
 }
 </style>
 

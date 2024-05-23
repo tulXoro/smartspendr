@@ -27,8 +27,8 @@
     labels: ['Education', 'Groceries'],
     datasets: [{
       data: [100, 20],
-      backgroundColor: ['#4A1942', '#A499BE'],
-      hoverBackgroundColor: ['#893168', '#9BA2FF']
+      backgroundColor: ['#E53E3E', '#CA61C3'],
+      hoverBackgroundColor: ['#1CA3A3', '#9BA2FF']
     }]
   };
 
@@ -36,7 +36,7 @@
     labels: ['Paycheck', 'Gift'],
     datasets: [{
       data: [500, 300],
-      backgroundColor: ['#114B5F', '#CA61C3'],
+      backgroundColor: ['#E53E3E', '#CA61C3'],
       hoverBackgroundColor: ['#456990', '#EE85B5']
     }]
   };
@@ -98,7 +98,7 @@
 	.total-money {
     text-align: center;
     font-size: 20px;
-    color: #2ecc71; 
+    color: white; 
     margin-bottom: 10px; 
     font-weight: bold; 
     padding: 10px 0; 
@@ -202,7 +202,7 @@ button.add-button {
     {#each expenses as expense}
       <ExpenseItem item={expense} />
     {/each}
-<button class="add-button" on:click={toggleNewExpenseModal} style= "bottom: 148px">+</button>
+<!-- <button class="add-button" on:click={toggleNewExpenseModal} style= "bottom: 148px">+</button> -->
         {#if showNewExpenseModal}
             <NewExpenseModal {addExpense} close={toggleNewExpenseModal} />
         {/if}
@@ -220,7 +220,7 @@ button.add-button {
 		{#each incomes as income}
       <ExpenseItem item={income} />
     {/each}
-		    <button class="add-button" on:click={toggleNewIncomeModal} style= "bottom: 148px">+</button>
+		    <!-- <button class="add-button" on:click={toggleNewIncomeModal} style= "bottom: 148px">+</button> -->
         {#if showNewIncomeModal}
             <NewIncomeModal {addExpense} close2={toggleNewIncomeModal} />
         {/if}
