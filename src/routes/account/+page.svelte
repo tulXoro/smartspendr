@@ -38,6 +38,7 @@ h1{
 
 <div class="page">
   <div class="container">
+    <h1>Account Overview</h1>
     <div style="height: 400px; width: 100%;">
       <Chart />
     </div>

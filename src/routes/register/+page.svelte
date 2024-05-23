@@ -124,7 +124,7 @@
             <input class="uploadImg" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>uploadFile(e)} id="uploadButton" >
         </div>
         <input class="input" type="text" placeholder="Username" bind:value={username}>
-        <input class="input" type="text" placeholder="Password" bind:value={password}>
+        <input class="input" type="password" placeholder="Password" bind:value={password}>
         <button class="button" type="submit">Save Profile</button>
     </form>
 </div>

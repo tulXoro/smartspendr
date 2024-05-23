@@ -20,6 +20,8 @@
         margin-bottom: 50px;
         padding: 0;
         font-size: 4rem;
+        color: #E53E3E;
+        font-weight: bold;
     }
     .welcomeSign{
         display: flex;
