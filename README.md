@@ -1,18 +1,23 @@
-# Installation
+# SmartSpendr
 
-## Prerequisites
+## Description
 
-1. Make sure you have the latest version of [NodeJS](https://nodejs.org/en/download) installed.
+This is a proof-of-concept collaborative project to help users track their financial goals. As it is a proof of concept, none of the features actually work and everything is a placeholder.
 
-## Developing
+## How it works
 
-First clone the project. After you have the project on your local machine, use `npm install` (or `pnpm install` or `yarn`) to install necessary libraries.
+It uses [SvelteKit](https://svelte.dev/). All of the designs were roughly drafted using [Figma](https://www.figma.com/).
 
-Afterwards, you may run:
+## Usage
 
-```bash
-npm run dev
+Use this however you see fit.
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Dependencies
+1. Ensure you have the latest version of [Node](https://nodejs.org/en).
+
+## Installation
+
+1. Clone the repository and change directory into it.
+2. Install necessary dependencies with `npm i`.
+3. Start the app using `npm run dev`
+
