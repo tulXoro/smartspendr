@@ -1,4 +1,3 @@
-
 <script>
    import RobotIcon from "$lib/assets/robot.svg";
    import UserIcon from "$lib/assets/user.svg";
@@ -11,7 +10,11 @@
    {#if sender === "AI Assistant"}
       <img class="w-8 h-8 rounded-full" src={RobotIcon} alt="RobotIcon">
    {/if}
-    <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-box rounded-e-xl rounded-es-xl">
+    <div 
+      class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 chat-box rounded-b-xl"
+      class:rounded-r-xl={sender === "AI Assistant"}
+      class:rounded-l-xl={sender !== "AI Assistant"}
+      >
        <div class="flex items-center space-x-2 rtl:space-x-reverse">
           <span class="text-sm font-semibold">{sender}</span>
           <span class="text-sm font-normal">{time}</span>
